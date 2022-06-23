@@ -1,0 +1,62 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#paneMenu{
+	-fx-background-color : #2596be;	
+}
+
+.button {
+    -fx-font: 14.0px "Serif";
+    -fx-padding: 3.0;
+    /*-fx-background-color: #304658;*/
+    -fx-pref-height:  40.0;
+    -fx-pref-width :  150;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: linear-gradient(#34495E 0.0%, #000000 100.0%);
+}
+
+.button :hover{
+   -fx-background-color: #00B2FF;
+   -fx-text-fill: #333333;
+   -fx-font: 19.0px "Serif";
+}
+
+#paneMenu .button:hover{
+   /*Your button style on hover*/
+   -fx-background-color: fff;
+   -fx-text-fill: #333333;
+   -fx-font: 19.0px "Serif";
+}
+
+.buttonNotSelected{
+	-fx-font: 14.0px "Serif";
+	-fx-text-fill: #ffffff;
+    -fx-pref-height:  40.0;
+    -fx-pref-width:  220;
+	-fx-background-color: transparent;
+	-fx-padding : 10px;
+	-fx-alignment: center_left ;
+	-fx-padding : 15px;
+}
+.buttonSelected{
+	-fx-font: 14.0px "Serif";
+	-fx-text-fill: #333333;
+    -fx-pref-height:  40.0;
+    -fx-pref-width:  220;
+	-fx-background-color: fff;
+	-fx-padding : 10px;
+	-fx-alignment: center_left ;
+	-fx-padding : 15px;
+}
+
+#paneContenu{
+	-fx-background-color : fff;
+}
+.recherchePane{
+	-fx-background-color : #ddd;	
+}
+.recherchePane{
+	-fx-background-color : #ddd;	
+}
+.majPane{
+	-fx-background-color : #ddd;	
+}

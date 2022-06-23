@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="765.0" style="-fx-background-color: ddd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ordreMissionNewController">
+   <children>
+      <AnchorPane layoutX="8.0" layoutY="4.0" prefHeight="253.0" prefWidth="750.0" style="-fx-background-color: fff;">
+         <children>
+            <Label layoutX="140.0" layoutY="10.0" text="Nouvel ordre de mission">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <VBox layoutX="8.0" layoutY="40.0" prefHeight="203.0" prefWidth="731.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="0.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="80.0" text="Référence :" />
+                        <TextField fx:id="tf_reference_am" editable="false" prefHeight="25.0" prefWidth="400.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefWidth="80.0" text="Mission :" />
+                        <TextField fx:id="tf_mission" prefHeight="25.0" prefWidth="400.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="0.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="80.0" text="Client :" />
+                        <ComboBox fx:id="cb_client" editable="true" prefHeight="25.0" prefWidth="400.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="0.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="80.0" text="Déstination :" />
+                        <TextField fx:id="tf_destination" prefHeight="25.0" prefWidth="400.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefWidth="80.0" text="Site / Agence :" />
+                        <TextField fx:id="tf_site" prefHeight="25.0" prefWidth="400.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="0.0" spacing="15.0">
+                     <children>
+                        <Label prefWidth="80.0" text="Départ le :" />
+                        <DatePicker fx:id="dp_depart" prefHeight="25.0" prefWidth="158.0" />
+                        <Label text="Jusqu'au :" />
+                        <DatePicker fx:id="dp_retour" prefHeight="25.0" prefWidth="158.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="508.0" layoutY="16.0" text="Alger Le," />
+            <DatePicker fx:id="dp_dateCreation" layoutX="563.0" layoutY="9.0" prefHeight="25.0" prefWidth="142.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="264.0" prefHeight="112.0" prefWidth="750.0" style="-fx-background-color: fff;">
+         <children>
+            <Label layoutX="250.0" layoutY="10.0" text="Véhicule">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img_vehicule" fitHeight="80.0" fitWidth="150.0" layoutX="587.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+            <GridPane layoutX="22.0" layoutY="40.0" prefHeight="60.0" prefWidth="531.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="35.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="219.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="75.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="176.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Matricule :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cb_mat_selected" onAction="#matricule_selected" prefWidth="160.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Type :" />
+                  <ComboBox fx:id="cb_type_veh" onAction="#type_selected" prefWidth="160.0" GridPane.columnIndex="1" />
+                  <Label text="Marque :" GridPane.columnIndex="2" />
+                  <ComboBox fx:id="cb_marque_veh" onAction="#marque_selected" prefWidth="160.0" GridPane.columnIndex="3" />
+                  <Label text="Nom :" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cb_nom_veh" onAction="#nom_selected" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="380.0" prefHeight="253.0" prefWidth="750.0" style="-fx-background-color: fff;">
+         <children>
+            <Label layoutX="250.0" layoutY="10.0" text="Employés">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table_emp" layoutX="234.0" layoutY="41.0" onKeyReleased="#supprimerEmploye" prefHeight="203.0" prefWidth="506.0">
+              <columns>
+                <TableColumn fx:id="col_code" prefWidth="60.0" text="Code " />
+                <TableColumn fx:id="col_nom" prefWidth="125.0" text="Nom" />
+                  <TableColumn fx:id="col_prenom" prefWidth="120.0" text="Prénom" />
+                  <TableColumn fx:id="col_poste" prefWidth="190.0" text="Poste" />
+              </columns>
+            </TableView>
+            <Label layoutX="15.0" layoutY="44.0" text="Recherche employé : " />
+            <TextField fx:id="tf_recherche_emp" layoutX="14.0" layoutY="67.0" onKeyReleased="#rechercherEmpoye" prefHeight="25.0" prefWidth="160.0" promptText="nom / prénom..." />
+            <GridPane layoutX="15.0" layoutY="100.0" prefHeight="145.0" prefWidth="206.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="56.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Code :" />
+                  <Label text="Nom :" GridPane.rowIndex="1" />
+                  <Label text="Prénom :" GridPane.rowIndex="2" />
+                  <Label text="Poste :" GridPane.rowIndex="3" />
+                  <Label fx:id="label_code_emp" text="/" GridPane.columnIndex="1" />
+                  <Label fx:id="label_nom_emp" text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="label_prenom_emp" text="/" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="label_poste_emp" text="/" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <ImageView fx:id="img_ajouterEmp" fitHeight="40.0" fitWidth="40.0" layoutX="189.0" layoutY="60.0" onMouseClicked="#ajouterEmp" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="638.0" prefHeight="60.0" prefWidth="750.0" style="-fx-background-color: fff;">
+         <children>
+            <Button fx:id="bt_ajouter" layoutX="580.0" layoutY="8.0" mnemonicParsing="false" onAction="#ajouterOrdreMission" prefHeight="40.0" prefWidth="150.0" text="Ajouter" />
+            <Button fx:id="bt_annule" layoutX="24.0" layoutY="8.0" mnemonicParsing="false" onAction="#annulerOrdreMission" prefHeight="40.0" prefWidth="150.0" text="Annulé" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

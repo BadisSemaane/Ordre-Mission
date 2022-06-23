@@ -1,0 +1,100 @@
+connect system
+
+create user ordreMission identified by orcl1;
+grant connect to ordreMission;
+GRANT CREATE SESSION TO ordreMission;
+GRANT UNLIMITED TABLESPACE TO ordreMission;
+
+GRANT   all privileges to ordreMission;
+
+conn ordreMission/orcl1
+
+create table vehicule (
+	id_vehicule number primary key,
+	matricule varchar2(13) ,
+	nom varchar2(20),
+	marque varchar2(20),
+	type varchar2(20),
+	image_path varchar2(200)
+);
+
+create sequence seq_id_vehicule start with 1 increment by 1;
+
+create or replace trigger select_next_id_vehicule
+	before insert on vehicule
+	FOR EACH ROW
+	BEGIN
+	  SELECT seq_id_vehicule.NEXTVAL
+	  INTO   :new.id_vehicule
+	  FROM   dual;
+	END;
+/
+
+create table employe (
+	id_emp number PRIMARY key,
+	nom VARCHAR(20),
+	prenom VARCHAR(20),
+	poste VARCHAR(20),
+	status VARCHAR(10),
+	tel VARCHAR(20)
+);
+
+create SEQUENCE seq_id_emp START with 1 INCREMENT by 1;
+
+create or replace trigger select_next_id_emp 
+	before insert on employe
+	for EACH ROW
+	BEGIN
+		select seq_id_emp.NEXTVAL
+		into :new.id_emp
+		from dual;
+	end;
+/	
+
+CREATE TABLE ordreMission (
+	id_om NUMBER PRIMARY key,
+	refrence VARCHAR2(20),
+    annee number(4),
+	num_annee NUMBER(3),
+	mission varchar2(100),
+	client VARCHAR2(100),
+	site VARCHAR2(100),
+	destination VARCHAR2(30),
+	date_dep VARCHAR2(10),
+	date_retour VARCHAR2(10),
+	id_vehicule NUMBER REFERENCES vehicule(id_vehicule)
+);
+
+create SEQUENCE seq_id_ordreMission START with 1 INCREMENT by 1;
+
+create or replace trigger select_next_id_om 
+	before insert on ordreMission
+	for EACH ROW
+	BEGIN
+		select seq_id_ordreMission.NEXTVAL
+		into :new.id_om
+		from dual;
+	end;
+/	
+
+CREATE table relation_om_emp (
+	id_relation NUMBER PRIMARY key,
+	id_om NUMBER REFERENCES ordreMission(id_om),
+	id_emp NUMBER REFERENCES employe(id_emp)
+)
+
+create SEQUENCE seq_id_relation_om_emp START with 1 INCREMENT by 1;
+
+create or replace trigger select_next_id_relation_om_emp
+	before insert on relation_om_emp
+	for EACH ROW
+	BEGIN
+		select seq_id_relation_om_emp.NEXTVAL
+		into :new.id_relation
+		from dual;
+	end;
+/	
+
+
+
+https://www.miss-seo-girl.com/comment-recuperer-un-site-pirate-la-check-list-indispensable/

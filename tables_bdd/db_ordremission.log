@@ -1,0 +1,29 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Thu Jun 23 15:15:29 2022
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "ORDREMISSION"."SYS_EXPORT_SCHEMA_01":  ordremission/******** DIRECTORY=MY_BACKUP_DIR DUMPFILE= db_ordremission.dmp SCHEMAS=ordremission LOGFILE=db_ordremission.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 256 KB
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/TRIGGER
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "ORDREMISSION"."EMPLOYE"                    7.882 KB      17 rows
+. . exported "ORDREMISSION"."ORDREMISSION"               13.70 KB      35 rows
+. . exported "ORDREMISSION"."RELATION_OM_EMP"            6.929 KB      80 rows
+. . exported "ORDREMISSION"."VEHICULE"                   7.632 KB       6 rows
+Master table "ORDREMISSION"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for ORDREMISSION.SYS_EXPORT_SCHEMA_01 is:
+  C:\TABLES_ORACLE_IMPORTES\DB_ORDREMISSION.DMP
+Job "ORDREMISSION"."SYS_EXPORT_SCHEMA_01" successfully completed at 15:16:47

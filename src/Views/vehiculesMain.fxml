@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.vehiculesMainController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="1120.0" styleClass="recherchePane">
+         <children>
+            <GridPane alignment="CENTER_LEFT" hgap="5.0" layoutX="4.0" layoutY="19.0" prefHeight="30.0" prefWidth="1086.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="70.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="70.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="70.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Matricule :" />
+                  <Label text="Nom :" GridPane.columnIndex="2" />
+                  <Label text="Marque :" GridPane.columnIndex="4" />
+                  <ImageView fx:id="img_refrech" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#recuperer_liste_vehicules" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+                  <TextField fx:id="tf_matriculeVeh" onAction="#recuperer_liste_vehicules" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="cb_marqueVeh" onAction="#recuperer_liste_vehicules" prefWidth="150.0" GridPane.columnIndex="5" />
+                  <TextField fx:id="tf_nom_Veh" onAction="#recuperer_liste_vehicules" GridPane.columnIndex="3" />
+                  <Label text="type :" GridPane.columnIndex="6" />
+                  <ComboBox fx:id="cb_typeVeh" onAction="#recuperer_liste_vehicules" prefWidth="150.0" GridPane.columnIndex="7" />
+               </children>
+            </GridPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="620.0" prefHeight="70.0" prefWidth="1120.0" styleClass="majPane">
+         <children>
+            <HBox alignment="CENTER" layoutX="99.0" layoutY="-23.0" prefHeight="77.0" prefWidth="1120.0" spacing="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="bt_new" mnemonicParsing="false" onAction="#nouveauVehicule" text="Nouvreau" />
+                  <Button fx:id="bt_modify" mnemonicParsing="false" onAction="#modifierVehicule" text="Modifier" />
+                  <Button fx:id="bt_delete" mnemonicParsing="false" onAction="#supprimerVehicule" text="Supprimer" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="86.0" prefHeight="526.0" prefWidth="1120.0" styleClass="recherchePane">
+         <children>
+            <TableView fx:id="tableVehicules" layoutX="2.0" layoutY="39.0" prefHeight="482.0" prefWidth="1110.0">
+              <columns>
+                <TableColumn fx:id="col_numveh" prefWidth="79.0" text="N°" />
+                  <TableColumn fx:id="col_photoVeh" maxWidth="200.0" minWidth="185.0" prefWidth="185.0" text="Photo" />
+                <TableColumn fx:id="col_matriculeVeh" prefWidth="214.0" text="Matricule" />
+                  <TableColumn fx:id="col_nomVeh" maxWidth="250.0" minWidth="200.0" prefWidth="205.0" text="Nom" />
+                  <TableColumn fx:id="col_marqueVeh" maxWidth="250.0" minWidth="200.0" prefWidth="205.0" text="Marque" />
+                  <TableColumn fx:id="col_typeVeh" maxWidth="250.0" minWidth="200.0" prefWidth="205.0" text="Type" />
+              </columns>
+            </TableView>
+            <Label layoutX="23.0" layoutY="4.0" text="Liste des véhicules :">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
